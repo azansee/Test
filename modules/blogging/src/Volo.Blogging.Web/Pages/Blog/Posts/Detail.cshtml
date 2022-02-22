@@ -1,0 +1,15 @@
+﻿@page
+@using Volo.Blogging.Pages.Blog.Posts
+@model DetailModel
+@{
+}
+
+<h2>@Model.Post.Title</h2>
+
+<p>@Model.Post.Content</p>
+
+<p>
+    <i>Posted to @Model.Blog.Name On @Model.Post.CreationTime</i>
+</p>
+
+<a asp-page="./Edit" asp-route-postId="@Model.Post.Id" asp-route-blogShortName="@Model.BlogShortName">edit</a>
