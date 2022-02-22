@@ -1,0 +1,25 @@
+﻿@page
+@using Volo.Blogging.Pages.Blog.Posts
+@model EditModel
+@inherits Volo.Blogging.Pages.Blog.BloggingPage
+
+@section scripts {
+    <abp-script-bundle name="@typeof(EditModel).FullName">
+        <abp-script src="/pages/blog/posts/edit.js" />
+    </abp-script-bundle>
+}
+
+<form method="post">
+    <abp-input asp-for="@Model.Post.Title" auto-focus="true" />
+    <abp-input asp-for="@Model.Post.Url" />
+
+    <div class="form-group">
+        <label>@L["Content"]</label>
+        <textarea rows="4" class="form-control" name="Post.Content">@Model.Post.Content</textarea>
+    </div>
+
+    <abp-input asp-for="@Model.Post.BlogId"/>
+    <abp-input asp-for="@Model.Post.Id"/>
+
+    <abp-button type="submit" text="@L["Submit"].Value" />
+</form>
