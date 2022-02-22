@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Volo.Abp.Identity.Web</AssemblyName>
+    <PackageId>Volo.Abp.Identity.Web</PackageId>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Areas\**\*.cshtml" />
+    <EmbeddedResource Include="Areas\**\*.js" />
+    <EmbeddedResource Include="Areas\**\*.json" />
+    <EmbeddedResource Include="Areas\**\*.css" />
+    <EmbeddedResource Include="wwwroot\**\*.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Identity\Users\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Volo.Abp.AspNetCore.Mvc.UI.Bootstrap\Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.csproj" />
+    <ProjectReference Include="..\Volo.Abp.Identity.Application.Contracts\Volo.Abp.Identity.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

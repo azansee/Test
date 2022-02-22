@@ -1,0 +1,24 @@
+﻿using Microsoft.Extensions.DependencyInjection;
+using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap;
+using Volo.Abp.Identity;
+using Volo.Abp.Modularity;
+using Volo.Abp.VirtualFileSystem;
+
+namespace Volo.Abp.Account.Web
+{
+    [DependsOn(typeof(AbpIdentityDomainModule))]
+    [DependsOn(typeof(AbpAspNetCoreMvcUiBootstrapModule))]
+    [DependsOn(typeof(AbpAccountApplicationContractsModule))]
+    public class AbpAccountWebModule : AbpModule
+    {
+        public override void ConfigureServices(IServiceCollection services)
+        {
+            services.AddAssemblyOf<AbpAccountWebModule>();
+
+            services.Configure<VirtualFileSystemOptions>(options =>
+            {
+                options.FileSets.AddEmbedded<AbpAccountWebModule>("Volo.Abp.Account.Web");
+            });
+        }
+    }
+}
