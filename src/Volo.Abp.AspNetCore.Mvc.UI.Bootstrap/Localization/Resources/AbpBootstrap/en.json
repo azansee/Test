@@ -1,0 +1,11 @@
+{
+  "culture": "en",
+  "texts": {
+    "Close": "Close",
+    "Save": "Save",
+    "SavingWithThreeDot": "Saving...",
+    "Actions": "Actions",
+    "Delete": "Delete",
+    "Edit": "Edit"
+  }
+}
